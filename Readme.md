@@ -43,12 +43,22 @@ Host and Slice provides a quick and easy way to set up a file mirroring service 
 
 3. **Configure nginx proxy manager**
 
-   Goto the admin page: http://[[yourserver]]:9487/ (e.g. http://localhost:9487/))
+   a. Goto the admin page: http://[[yourserver]]:9487/ (e.g. http://localhost:9487/))
      - Default Administrator User
        - Email:    admin@example.com
        - Password: changeme
    
+   b. Add a proxy host in Nginx Proxy Manager:
+     1. Proxy Hosts -> Add Proxy Host
+     2. 配置
+       - Domain Names: 請依您情況配置，如 localhost or 該台機器的ip or domain name
+       - scheme: http
+       - Foward Host/IP: nginx
+       - Forward Port: 80
+
    See https://nginxproxymanager.com/guide/ for more info.
+
+
 
 4. **Access your files**
    place your blob files under blob dir.
