@@ -23,7 +23,7 @@ Host and Slice provides a quick and easy way to set up a file mirroring service 
 2.  **(Optional) Split:** If your files are large, use the `splitit.sh` script (located in `data_nginx/www/blob`) to split them into smaller, more manageable chunks.
 3. **Start the service:** the files are avaliable for download via http.
 4. **Serve Files:** Nginx will serve the files directly from the `blob` directory.
-5. ** (Optional) Merge Downloaded files:** 
+5. **(Optional) Merge Downloaded files:** 
   ```
   # 於Windows環境下，參考下列方式合併下載之檔案:
   cmd /c "copy /b small_part_* combined_file.bin"
