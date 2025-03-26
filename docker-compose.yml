@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  proxy:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '443:443'
+      - '8443:8443'
+      - '9487:81'       # Admin port
+    volumes:
+      - ./data_npm/data:/data
+      - ./data_npm/letsencrypt:/etc/letsencrypt
+    networks:
+      - webnet
+
+  nginx:
+    image: nginx:1.27-alpine
+    volumes:
+      - ./data_nginx/www:/usr/share/nginx/html
+      - ./data_nginx:/etc/nginx/conf.d
+    networks:
+      - webnet
+    restart: always
+    expose:
+      - '80'
+
+networks:
+  webnet:
+    driver: bridge
+
