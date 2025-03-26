@@ -41,9 +41,20 @@ Host and Slice provides a quick and easy way to set up a file mirroring service 
 
     This will start the Nginx server in the background.
 
-3. **Access your files**
-    after starting the service, your file can be accessed at `http://localhost/<yourfile>` or `http://<your-server-ip>/<yourfile>`
-    e.g. `http://localhost/anya.jpeg`
+3. **Configure nginx proxy manager**
+
+   Goto the admin page: http://[[yourserver]]:9487/ (e.g. http://localhost:9487/))
+     - Default Administrator User
+       - Email:    admin@example.com
+       - Password: changeme
+   
+   See https://nginxproxymanager.com/guide/ for more info.
+
+4. **Access your files**
+   place your blob files under blob dir.
+   Files can be accessed via  http://<yourserver>/blob/<filename>
+
+
 
 **Using `splitit.sh`:**
 
