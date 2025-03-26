@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MAXSIZE=750M
+MAXSIZE=50M
 
 # Check if the user provided a filename
 if [ -z "$1" ]; then
